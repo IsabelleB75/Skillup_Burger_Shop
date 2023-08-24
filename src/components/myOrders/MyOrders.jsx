@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineEye } from "react-icons/ai";
 
 const MyOrders = () => {
-  const arr = [1, 2, 3, 4];
+  const arr = [1, 2, 3, 4]; // Ceci est votre tableau d'origine. Vous pouvez remplacer cela par vos données réelles.
 
   return (
     <section className="tableClass">
@@ -11,18 +11,29 @@ const MyOrders = () => {
         <table>
           <thead>
             <tr>
-              <th>Order Id</th>
-              <th>Status</th>
-              <th>Item Qty</th>
-              <th>Amount</th>
-              <th>Payment Method</th>
-              <th>Action</th>
+              <th>Numéro de commande</th>
+              <th>État</th>
+              <th>Qté</th>
+              <th>Montant</th>
+              <th>Mode de paiement</th>
+              <th>Suivi</th>
             </tr>
           </thead>
-
           <tbody>
-//     Add the code for the table body
-           
+            {arr.map((i) => (
+              <tr key={i}>
+                <td>#sdkfsdfdsf</td>
+                <td>En cours de traitement</td>
+                <td>23</td>
+                <td>${2132}</td>
+                <td>CB</td>
+                <td>
+                  <Link to={`/order-details/${i}`}>  {/* Modification ici */}
+                    <AiOutlineEye />
+                  </Link>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </main>
@@ -31,3 +42,4 @@ const MyOrders = () => {
 };
 
 export default MyOrders;
+

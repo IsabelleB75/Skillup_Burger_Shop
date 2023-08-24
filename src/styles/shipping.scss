@@ -80,3 +80,19 @@
   background-color:  $reddark;
   text-decoration: none;
 }
+.popup-btn {
+  display: block;
+  margin: 20px auto 0; // Ajustez la marge supérieure pour positionner le bouton
+  padding: 10px 20px;
+  background-color: rgb(156, 0, 60);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+      background-color: darken(rgb(156, 0, 60), 10%);
+  }
+}
+
