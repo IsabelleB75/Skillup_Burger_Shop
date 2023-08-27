@@ -82,3 +82,17 @@
   }
 }
 
+.custom-modal {
+  position: fixed;
+  top: 70%;  
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(156, 0, 60);   // Couleur de fond du bouton
+  color: white;  // Couleur de texte
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+

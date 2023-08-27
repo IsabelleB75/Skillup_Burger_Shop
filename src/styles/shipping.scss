@@ -1,3 +1,4 @@
+// shipping.scss
 @import "colors";
 
 .shipping {
@@ -30,7 +31,7 @@
         justify-content: space-between;
 
         > label {
-          white-space: nowrap;
+          white-space: nowrap;  
         }
         > input,
         > select {
@@ -96,3 +97,8 @@
   }
 }
 
+input:focus,
+select:focus {
+    box-shadow: 0 0 0px 2px #2196F3 inset;
+    outline: none;
+}

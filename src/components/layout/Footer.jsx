@@ -1,4 +1,4 @@
-// Write all the code here
+// Footer.jsx
 import React from "react";
 import { AiFillInstagram, AiFillYoutube, AiFillGithub } from "react-icons/ai";
 const Footer = () => {

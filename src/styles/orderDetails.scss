@@ -74,3 +74,18 @@
     }
   }
 }
+
+.return-button {
+  background-color: $red;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-align: center;
+  width: auto; // Pour s'assurer que le bouton s'adapte au contenu
+  text-decoration: none; // Pour supprimer le soulignement du lien
+
+  &:hover {
+      color: white;
+      background-color: darken($red, 9%);
+  }
+}

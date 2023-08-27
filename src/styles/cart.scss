@@ -90,3 +90,35 @@
     width: 100%;
   }
 }
+
+.payment-links {
+  display: flex;
+  justify-content: center; // Pour centrer les éléments horizontalement
+  gap: 1rem; // Pour ajouter un espace entre les deux liens
+
+  > a {
+      background-color: $red;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-align: center;
+      width: auto; // Pour s'assurer que le bouton s'adapte au contenu
+
+      &:hover {
+          color: white;
+          background-color: darken($red, 9%);
+      }
+  }
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+
+
+
+
+

@@ -1,9 +1,25 @@
+// MyOrders.jsx
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineEye } from "react-icons/ai";
+import { useSelector } from 'react-redux';  // Importer useSelector
 
 const MyOrders = () => {
-  const arr = [1, 2, 3, 4]; // Ceci est votre tableau d'origine. Vous pouvez remplacer cela par vos données réelles.
+  const orders = useSelector(state => state.orders.orders);  // Obtenir les commandes du state Redux
+
+  // Calculer la quantité totale et le montant pour une commande
+  const getTotalQuantityAndAmount = (items) => {
+    let totalQuantity = 0;
+    let totalAmount = 0;
+
+    items.forEach(item => {
+      totalQuantity += item.quantity;
+      totalAmount += item.price * item.quantity;
+    });
+
+    return { totalQuantity, totalAmount };
+  };
 
   return (
     <section className="tableClass">
@@ -20,20 +36,24 @@ const MyOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {arr.map((i) => (
-              <tr key={i}>
-                <td>#sdkfsdfdsf</td>
-                <td>En cours de traitement</td>
-                <td>23</td>
-                <td>${2132}</td>
-                <td>CB</td>
-                <td>
-                  <Link to={`/order-details/${i}`}>  {/* Modification ici */}
-                    <AiOutlineEye />
-                  </Link>
-                </td>
-              </tr>
-            ))}
+            {orders.map((order, index) => {
+              const { totalQuantity, totalAmount } = getTotalQuantityAndAmount(order.items);
+              
+              return (
+                <tr key={index}>
+                  <td>#{order.id}</td>
+                  <td>En cours de traitement</td>
+                  <td>{totalQuantity}</td>
+                  <td>${order.totalAmount}</td> {/* Utiliser le montant total de la commande (incluant TVA + frais de livraison) */}
+                  <td>CB</td>
+                  <td>
+                    <Link to={`/order-details/${order.id}`}>
+                      <AiOutlineEye />
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </main>
@@ -42,4 +62,3 @@ const MyOrders = () => {
 };
 
 export default MyOrders;
-

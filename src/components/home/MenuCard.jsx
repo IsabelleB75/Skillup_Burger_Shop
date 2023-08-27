@@ -1,8 +1,26 @@
-import React from "react";
-import { motion } from "framer-motion";
-import Popup from 'reactjs-popup';
+// MenuCard.jsx
 
-const MenuCard = ({ itemNum, burgerSrc, price, title, handler, delay = 0 }) => {
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/slices/cartSlice';  // Ajustez le chemin d'accès si nécessaire
+
+const MenuCard = ({ itemNum, burgerSrc, price, title, delay = 0 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleButtonClick = () => {
+    console.log("Button clicked for item:", itemNum);
+    dispatch(addToCart({
+        id: itemNum,
+        title: title,
+        img: burgerSrc,
+        price: price
+    }));
+    setIsModalOpen(true);
+    setTimeout(() => setIsModalOpen(false), 2000);  // Ferme le modal après 2 secondes
+  };
+
   return (
     <motion.div
       className="menuCard"
@@ -21,19 +39,15 @@ const MenuCard = ({ itemNum, burgerSrc, price, title, handler, delay = 0 }) => {
       <div></div>
       <main>
         <img src={burgerSrc} alt={itemNum} />
-
         <h5>₹{price}</h5>
-
         <p>{title}</p>
-        <Popup trigger=
-                {<button onClick={() => handler(itemNum)}>Buy Now</button>}
-               >
-                <div style={{color:"red", transform: 'translate(0%,-500%)', backgroundColor: '#fff', padding: '10px', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)'}}>Added to cart!</div>
-               
-            </Popup>
-            
-
+        <button type="button" onClick={handleButtonClick}>Buy Now</button>
         
+        {isModalOpen && (
+            <div className="custom-modal">
+                Added to cart!
+            </div>
+        )}
       </main>
     </motion.div>
   );
