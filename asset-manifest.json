@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Skillup_Burger_Shop/static/css/main.c6c80043.css",
+    "main.css": "/Skillup_Burger_Shop/static/css/main.de47b7d9.css",
     "main.js": "/Skillup_Burger_Shop/static/js/main.8ad43386.js",
     "static/media/burger3.png": "/Skillup_Burger_Shop/static/media/burger3.11eccfcb1a45834ac9d7.png",
     "static/media/burger2.png": "/Skillup_Burger_Shop/static/media/burger2.3a02b94cd44d825ebb94.png",
@@ -17,11 +17,11 @@
     "static/media/fa-v4compatibility.ttf": "/Skillup_Burger_Shop/static/media/fa-v4compatibility.c6a0c95b0a95c4553700.ttf",
     "static/media/fa-v4compatibility.woff2": "/Skillup_Burger_Shop/static/media/fa-v4compatibility.1bac2991f3dbfa237aec.woff2",
     "index.html": "/Skillup_Burger_Shop/index.html",
-    "main.c6c80043.css.map": "/Skillup_Burger_Shop/static/css/main.c6c80043.css.map",
+    "main.de47b7d9.css.map": "/Skillup_Burger_Shop/static/css/main.de47b7d9.css.map",
     "main.8ad43386.js.map": "/Skillup_Burger_Shop/static/js/main.8ad43386.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6c80043.css",
+    "static/css/main.de47b7d9.css",
     "static/js/main.8ad43386.js"
   ]
 }
